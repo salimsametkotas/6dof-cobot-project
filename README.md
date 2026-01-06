@@ -1,4 +1,4 @@
-# 6-DOF Cobot Pro - Final Year Project 🚀
+# 6-DOF Cobot Pro - Project 🚀
 
 **Author:** Salim Samet Kotaş  
 **University:** Necmettin Erbakan University, Mechatronics Engineering  
