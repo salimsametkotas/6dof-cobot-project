@@ -1,0 +1,12 @@
+float64 x
+float64 y
+float64 z
+---
+# SONUÇ
+float64[] joint_angles
+---
+# GERİ BİLDİRİM
+float64[] current_joints  
+float64 current_x
+float64 current_y
+float64 current_z

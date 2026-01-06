@@ -1,0 +1,7 @@
+<library path="cobot_kinematics_plugin">
+  <class name="cobot_kinematics_plugin/CobotKinematicsPlugin" type="cobot_kinematics_plugin::CobotKinematicsPlugin" base_class_type="kinematics::KinematicsBase">
+    <description>
+      A custom analytical kinematics plugin for the Cobot.
+    </description>
+  </class>
+</library>

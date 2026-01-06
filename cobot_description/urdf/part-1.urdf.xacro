@@ -34,5 +34,8 @@
         <child link="part-1-link" />
         <axis xyz="0.0 0.0 1.0" />
     </joint>
+    <gazebo reference="part-1-link">  
+        <material>Gazebo/SkyBlue</material>
+    </gazebo>
 
 </robot>

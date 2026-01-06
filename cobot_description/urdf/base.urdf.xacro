@@ -34,4 +34,8 @@
         <child link="base_link" />
     </joint>
 
+    <gazebo reference="base_link">
+        <material>Gazebo/White</material>
+    </gazebo>
+
 </robot>

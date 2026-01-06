@@ -1,12 +1,9 @@
 <?xml version="1.0"?>
-
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="agrobot">
 
     <gazebo>
         <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
-            <parameters>
-                $(find cobot_control)/config/cobat_controller.yaml
-            </parameters>
+            <parameters>$(find cobot_moveit_config)/config/ros2_controllers.yaml</parameters>
         </plugin>
     </gazebo>
 
@@ -18,41 +15,49 @@
         <joint name="part-1-joint">
             <command_interface name="position" />
             <state_interface name="position" />
+            <state_interface name="velocity" />
         </joint>
 
         <joint name="part-2-joint">
             <command_interface name="position" />
             <state_interface name="position" />
+            <state_interface name="velocity" />
         </joint>
 
         <joint name="part-3-joint">
             <command_interface name="position" />
             <state_interface name="position" />
+            <state_interface name="velocity" />
         </joint>
 
         <joint name="part-4-joint">
             <command_interface name="position" />
             <state_interface name="position" />
+            <state_interface name="velocity" />
         </joint>
 
         <joint name="part-5-joint">
             <command_interface name="position" />
             <state_interface name="position" />
+            <state_interface name="velocity" />
         </joint>
 
         <joint name="part-6-joint">
             <command_interface name="position" />
             <state_interface name="position" />
+            <state_interface name="velocity" />
         </joint>
 
         <joint name="finger-1-joint">
             <command_interface name="position" />
             <state_interface name="position" />
+            <state_interface name="velocity" />
         </joint>
 
         <joint name="finger-2-joint">
             <command_interface name="position" />
             <state_interface name="position" />
+            <state_interface name="velocity" />
         </joint>
     </ros2_control>
 </robot>

@@ -1,0 +1,98 @@
+
+
+QMainWindow {
+    background-color: #2b2b2b; /* Koyu Arka Plan */
+}
+
+
+QGroupBox {
+    border: 2px solid #444;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #ddd;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 15px;
+    padding: 0 5px;
+}
+
+/* Kamera Alanı */
+QLabel#cameraFeed {
+    background-color: #000;
+    border: 3px solid @ACCENT_COLOR@; /* Vurgu Rengi Çerçeve */
+    border-radius: 5px;
+}
+
+/* Giriş Kutucukları */
+QLineEdit {
+    background-color: #333;
+    border: 1px solid #555;
+    border-radius: 5px;
+    color: @ACCENT_COLOR@; 
+    padding: 5px;
+    font-size: 14px;
+}
+
+QLineEdit:focus {
+    border: 2px solid @ACCENT_COLOR@; 
+}
+
+/* Etiketler (Labels) */
+QLabel {
+    color: #ccc;
+    font-size: 14px;
+}
+
+/* Butonlar */
+QPushButton {
+    background-color: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #444, stop:1 #333);
+    border: 2px solid @ACCENT_COLOR@;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    font-size: 16px;
+}
+
+QPushButton:hover {
+    background-color: @ACCENT_COLOR@; /* Üzerine gelince vurgu rengi olsun */
+    color: #2b2b2b;
+}
+
+QPushButton:pressed {
+    background-color: #222;
+}
+
+/* Sekme Yapısı (Tab Widget) */
+QTabWidget::pane {
+    border: 2px solid #444;
+    background-color: #333;
+    border-radius: 5px;
+}
+
+QTabBar::tab {
+    background-color: #444;
+    color: #ccc;
+    padding: 10px 20px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    margin-right: 2px;
+}
+
+QTabBar::tab:selected {
+    background-color: @ACCENT_COLOR@; /* Seçili sekme vurgu rengi */
+    color: #2b2b2b;
+    font-weight: bold;
+}
+
+/* Açılır Menü (ComboBox) */
+QComboBox {
+    background-color: #333;
+    border: 1px solid @ACCENT_COLOR@;
+    border-radius: 5px;
+    padding: 5px;
+    color: #ccc;
+}

@@ -71,4 +71,13 @@
         <axis xyz="1.0 -2.524354896707238e-29 0.0" />
         <limit lower="0.0" upper="0.025" effort="1000000" velocity="1000000" />
     </joint>
+
+    <gazebo reference="finger-1-link">
+        <material>Gazebo/SkyBlue</material>
+    </gazebo>
+
+    <gazebo reference="finger-2-link">
+        <material>Gazebo/SkyBlue</material>
+    </gazebo>
+    
 </robot>

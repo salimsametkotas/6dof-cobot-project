@@ -36,5 +36,8 @@
         <child link="part-4-link" />
         <axis xyz="0.0 0.0 1.0" />
     </joint>
+     <gazebo reference="part-2-link"> 
+        <material>Gazebo/White</material>
+    </gazebo>
 
 </robot>

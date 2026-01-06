@@ -11,6 +11,7 @@
 #include "cobot_controller/cobot_controller_parameters.hpp"
 
 #include "cobot_interfaces/action/forward_kinematic.hpp"
+#include "cobot_interfaces/action/inverse_kinematic.hpp"
 #include "rclcpp_action/rclcpp_action.hpp"
 
 #include <cmath>
@@ -23,6 +24,9 @@ namespace cobot_controller
     public:
         using ForwardKinematic = cobot_interfaces::action::ForwardKinematic;
         using GoalHandleForwardKinematic = rclcpp_action::ServerGoalHandle<ForwardKinematic>;
+
+        using InverseKinematic = cobot_interfaces::action::InverseKinematic;
+        using GoalHandleInverseKinematic = rclcpp_action::ServerGoalHandle<InverseKinematic>;
 
         controller_interface::CallbackReturn on_init() override;
         controller_interface::CallbackReturn on_configure(const rclcpp_lifecycle::State &previous_state) override;
@@ -49,16 +53,26 @@ namespace cobot_controller
 
         std::array<double, 6> goals_;
 
-        rclcpp_action::Server<ForwardKinematic>::SharedPtr action_server_;
-        rclcpp_action::GoalResponse handle_goal(
+        rclcpp_action::Server<ForwardKinematic>::SharedPtr forward_kinematic_action_server_;
+        rclcpp_action::GoalResponse forward_handle_goal(
             const rclcpp_action::GoalUUID &uuid,
             std::shared_ptr<const ForwardKinematic::Goal> goal);
-        rclcpp_action::CancelResponse handle_cancel(
+        rclcpp_action::CancelResponse forward_handle_cancel(
             const std::shared_ptr<GoalHandleForwardKinematic> goal_handle);
-        void handle_accepted(const std::shared_ptr<GoalHandleForwardKinematic> goal_handle);
-        void execute(const std::shared_ptr<GoalHandleForwardKinematic> goal_handle);
+        void forward_handle_accepted(const std::shared_ptr<GoalHandleForwardKinematic> goal_handle);
+        void forward_execute(const std::shared_ptr<GoalHandleForwardKinematic> goal_handle);
+
+        rclcpp_action::Server<InverseKinematic>::SharedPtr inverse_kinematic_action_server_;
+        rclcpp_action::GoalResponse inverse_handle_goal(
+            const rclcpp_action::GoalUUID &uuid,
+            std::shared_ptr<const InverseKinematic::Goal> goal);
+        rclcpp_action::CancelResponse inverse_handle_cancel(
+            const std::shared_ptr<GoalHandleInverseKinematic> goal_handle);
+        void inverse_handle_accepted(const std::shared_ptr<GoalHandleInverseKinematic> goal_handle);
+        void inverse_execute(const std::shared_ptr<GoalHandleInverseKinematic> goal_handle);
 
         std::array<double, 3> forward_kinematic(double Q1, double Q2, double Q3, double Q4);
+        std::array<double, 6> inverse_kinematic(double x, double y, double z);
 
     protected:
         std::shared_ptr<ParamListener> param_listener_;

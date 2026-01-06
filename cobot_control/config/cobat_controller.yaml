@@ -34,4 +34,4 @@ cobot_controller:
     part_6_joint: "part-6-joint"
     finger_1_joint: "finger-1-joint"
     finger_2_joint: "finger-2-joint"
-    angle_degree: 0.05
+    angle_degree: 0.1

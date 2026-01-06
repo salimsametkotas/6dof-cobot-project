@@ -2,17 +2,25 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>cobot_gazebo</name>
-  <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="furkan@todo.todo">furkan</maintainer>
-  <license>TODO: License declaration</license>
+  <version>1.0.0</version>
+  <description>
+    Gazebo physics simulation environment and world files for 6-DOF Cobot Pro.
+  </description>
+
+  <maintainer email="salimsamet@example.com">Salim Samet Kotaş</maintainer>
+  
+  <license>Apache-2.0</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
-  <test_depend>ament_lint_auto</test_depend>
-  <test_depend>ament_lint_common</test_depend>
+  <exec_depend>gazebo_ros_pkgs</exec_depend>
+  <exec_depend>ros2_control</exec_depend>
+  <exec_depend>ros2_controllers</exec_depend>
+  <exec_depend>cobot_description</exec_depend>
+  <exec_depend>xacro</exec_depend>
 
   <export>
     <build_type>ament_cmake</build_type>
+    <gazebo_ros gazebo_model_path="${prefix}/models"/>
   </export>
 </package>

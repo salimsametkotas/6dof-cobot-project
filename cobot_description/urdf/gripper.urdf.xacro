@@ -34,4 +34,7 @@
         <parent link="part-6-link" />
         <child link="gripper-base-link" />
     </joint>
+    <gazebo reference="gripper-base-link"> 
+        <material>Gazebo/White</material>
+    </gazebo>
 </robot>
